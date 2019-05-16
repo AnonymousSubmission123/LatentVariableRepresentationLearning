@@ -9,7 +9,7 @@
 
 ## Train language model to learn representations
 * Run `exp_arc.py` to train a latent variable language model on the ARC corpus.
-  - For the limited time-frame model, change line 2 to `import LSTMTFLimited as GenModel` and add for example `look_back: 4` to set $$K=4$$. 
+  - For the limited time-frame model, change line 2 to `import LSTMTFLimited as GenModel` and add for example `look_back: 4`  in `gen_nn_kwargs` to set K=4. 
   - For Gen-RNN, change line 2 to `import LSTM as GenModel`
 * Run `exp_arc_disc.py` to train a discriminative language model (Non-LVM) on the ARC corpus.
 
