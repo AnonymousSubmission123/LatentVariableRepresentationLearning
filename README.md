@@ -7,6 +7,11 @@
 * SciPy
 * NLTK
 
+## Preprocess the data
+
+* Run `data_processing/process_arc.py` to pre-process the ARC corpus and the AI2 Reasoning Challenge.
+* Run `data_processing/process_scitail.py` to pre-process the SciTail dataset
+
 ## Train language model to learn representations
 * Run `python exp_arc.py` to train a latent variable language model on the ARC corpus.
   - For the limited time-frame model, change line 2 to `import LSTMTFLimited as GenModel` and add for example `'look_back': 4`  in `gen_nn_kwargs` to set K=4. 
