@@ -9,8 +9,8 @@
 
 ## Preprocess the data
 
-* Run `data_processing/process_arc.py` to pre-process the ARC corpus and the AI2 Reasoning Challenge.
-* Run `data_processing/process_scitail.py` to pre-process the SciTail dataset
+* Run `python data_processing/process_arc.py` to pre-process the ARC corpus and the AI2 Reasoning Challenge.
+* Run `python data_processing/process_scitail.py` to pre-process the SciTail dataset
 
 ## Train language model to learn representations
 * Run `python exp_arc.py` to train a latent variable language model on the ARC corpus.
