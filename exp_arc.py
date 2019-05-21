@@ -1,5 +1,5 @@
 from distributions import GaussianDiagonal
-from models.unsup.generative import LSTM as GenModel
+from models.unsup.generative import LSTMTFLimited as GenModel
 from models.unsup.recognition import LSTM as RecModel
 from trainers.unsup import SGVB as Trainer
 from run.unsup import RunGen as Run
@@ -19,7 +19,7 @@ out_dir = sys.argv[2]
 
 dataset = 'ARC/processed_glove_vocab_40000_unk_0.05'
 
-pre_trained = True
+pre_trained = False
 load_param_dir = 'code_outputs/2018_12_17_14_21_13'
 
 
@@ -41,7 +41,8 @@ learn_embs = False
 gen_nn_kwargs = {
     'depth': 1,
     'hid_units': 512,
-    'word_drop': 0.0,
+    'look_back': 4,
+    'look_back_depth': 2,
 }
 
 rec_nn_kwargs = {
@@ -62,7 +63,7 @@ trainer_kwargs = {'gen_model': GenModel,
                   'learn_embs': learn_embs,
                   }
 
-train = False
+train = True
 
 training_iterations = 800000
 training_warm_up_type = 'sigmoid'
